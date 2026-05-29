@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>The Aristocrat</title>
+    <style>
+        body {
+            background-color: #f7f6f2;
+            color: #1e1e1e;
+            font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+/*---------------------------NAVIGATION BAR!---------------------------*/
+        .navbar {
+            background-color: rgb(255, 255, 255);
+            padding: 0px 40px; 
+            position: fixed;
+            top: 0;
+            width: 100%;
+            box-sizing: border-box;
+            height: 90px;
+        }
+        .logo {
+            float: left;
+            margin: 0;
+            padding: 0;
+            height: 90px; 
+            overflow: hidden; 
+        }
+        .logoimg {
+            width: 180px;       
+            height: 140px;      
+            object-fit: cover;  
+            margin-top: -25px;  
+        }
+        .pindot {
+            float: right;
+            line-height: 90px;
+        }
+        .navbar a {
+            color: #144734;
+            text-decoration: none;
+            margin: 0 12px; 
+            font-size: 13px; 
+            font-weight: 600;
+            letter-spacing: 0.5px; 
+            padding: 6px 14px;
+            border-radius: 20px;
+        }
+        .navbar a:hover {
+            background-color: #b8923a27;
+        }
+/*---------------------------HOME PAGE!---------------------------*/
+        #home {
+            background-image: url('https://images.deliveryhero.io/image/fd-ph/LH/jeum-listing.jpg');
+            background-attachment: fixed;
+            background-position: bottom;
+            background-size: cover;
+            padding-top: 260px;
+            padding-bottom: 180px;
+            text-align: center;
+        }
+        .homebox {
+            max-width: 620px;
+            margin: 0 auto;
+            padding: 50px 40px;
+            background-color: rgba(255, 255, 255, 0.75); 
+            color: #144734;
+            border-radius: 28px;
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+        }
+        .homebox h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 46px;
+            font-weight: 800;
+            color: #144734;
+            margin: 0px 0px 15px 0px;
+            letter-spacing: -0.5px;
+        }
+        .homeline {
+            width: 500px;
+            height: 3px;
+            background-color: #b8923a;
+            border-radius: 2px;
+            margin: 0 auto 25px auto;
+        }
+        .homesub {
+            font-size: 14px;
+            font-weight: 700;
+            color: #b8923a; 
+            letter-spacing: 1.5px;
+            margin-bottom: 18px;
+        }
+        .homebox p {
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 1.6;
+            margin: 12px 0;
+            color: #2c3e35;
+        }
+/*---------------------------MENUUUUUUUU!---------------------------*/
+        #menu{
+            text-align: center;
+        }
+        .menuhead{
+            padding-top: 80px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #144734;
+            margin-bottom: 3px;
+        }
+        .menuhead2{
+            color: #b8923a;
+            font-size: 13px;
+            font-weight:500;
+            letter-spacing: 2px;
+            margin-bottom: 35px;
+        }
+        .menuselect {
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;       
+            gap: 10px;
+            max-width: 1000px;     
+            margin-left: auto;
+            margin-right: auto;
+            padding: 0 20px;      
+        }
+        .menucateg {
+            white-space: nowrap;   
+            font-size: 13px;
+            font-weight: 500;
+            background-color: #ffffff;
+            border: 1px solid #edf0ee;
+            color: #606b64;
+            padding: 10px 22px;
+            border-radius: 25px;
+            letter-spacing: 0.5px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+         .menucateg:hover, .menucateg.active {
+            background-color: #144734;
+            color: #ffffff;
+            border-color: #144734;
+            transform: translateY(-5px);
+            box-shadow: 0 4px 12px rgba(20, 71, 52, 0.15);
+        }
+        .menulist{
+            display: grid;
+            gap: 25px;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 10px 80px 10px;
+        }
+        .menulista {
+            background-color: #ffffff;
+            border: 1px solid #edf0ee;
+            border-radius: 20px;
+            padding: 25px;
+            text-align: left;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.02);
+        }
+        .menulista:hover {
+            box-shadow: 0 15px 35px rgba(20, 71, 52, 0.08);
+        }
+        .fud {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+        .fudname {
+            font-family: Georgia, serif;
+            font-size: 18px;
+            font-weight: bold;
+            color: #144734;
+            margin: 0;
+            padding-right: 15px;
+        }
+        .fudprice {
+            font-size: 16px;
+            font-weight: 600;
+            color: #b8923a;
+        }
+        .fuddesc {
+            font-size: 13.5px;
+            color: #606b64;
+            margin: 0;
+        }
+/*---------------------------CONTACT---------------------------*/
+        #contact {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        #contact h1 {
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: #144734;
+            margin-bottom: 5px;
+        }
+        .csub {
+            color: #b8923a;
+            font-size: 13px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 40px;
+        }
+        .cbox {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .ccard {
+            background-color: #f7f6f2;
+            border: 1px solid #edf0ee;
+            border-radius: 20px;
+            padding: 30px 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.02);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .ccard h3 {
+            font-family: Georgia, serif;
+            color: #144734;
+            font-size: 20px;
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .ccard p {
+            font-size: 15px;
+            color: #606b64;
+            margin: 8px 0;
+            line-height: 1.5;
+        }
+        .ccard:hover{
+            box-shadow: 0 12px 24px rgba(20, 71, 52, 0.08);
+        }
+        .social{
+            margin-top: 40px;
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+        }
+        .socialimg {
+            width: 40px;
+            height: 40px; 
+        }
+        .socialimg:hover {
+        box-shadow: 0 12px 24px rgba(20, 71, 52, 0.08);   
+        }
+        
+    </style>
+    <script>
+        function food(category) {
+            var items = document.getElementsByClassName('menulista');
+            for (var i = 0; i < items.length; i++) {
+                var currentCard = items[i];
+                var foodType = currentCard.getAttribute('data-category');
+                if (foodType === category) {
+                    currentCard.style.display = 'block';
+                } else {
+                    currentCard.style.display = 'none';}}}
+                 window.onload = function() {
+                 food('faves');};
+    </script>
+</head>
+<body>
+    <!---------------------------NAVIGATION BAR--------------------------->
+    <div class="navbar">
+        <div class="logo">
+            <img src="https://d3up48wss6lvj.cloudfront.net/uploads/tenants/logo/e21e0ee8f0896c82e9a22ed8c7db1efd.png" alt="The Aristocrat Logo" class="logoimg">
+        </div>
+        <div class="pindot">
+            <a href="#home">HOME</a>
+            <a href="#menu">MENU</a>
+            <a href="#about">ABOUT</a>
+            <a href="#review">REVIEWS</a>
+            <a href="#contact">CONTACT</a>
+         
+        </div>
+    </div>
+    <!---------------------------------HOME-------------------------------->
+    <div class="section" id="home">
+        <div class="homebox">
+            <p class="homesub">YOUR NEXT GREAT MEAL STARTS HERE</p>
+            <h1>The Aristocrat</h1>
+            <div class="homeline"></div>
+            <p>Serving the historic, traditional taste of Filipino cuisine since 1936.</p>
+            <p>Home of the Best Chicken Barbecue in Town!</p>  
+        </div>
+        <br>
+        <br>
+    </div>
+    <!---------------------------------MENU--------------------------------->
+    <div class="section" id="menu">
+        <h1 class="menuhead"> Our Menu</h1>
+        <p class="menuhead2">THE TASTE OF PHILIPPINE TRADITION SINCE 1936</p>
+    </div>
+    <div class="menuselect">
+        <button class="menucateg" onclick="food('faves', event)">All-Time Favorites</button>
+        <button class="menucateg" onclick="food('chicken', event)">Chicken</button>
+        <button class="menucateg" onclick="food('beef', event)">Beef</button>
+        <button class="menucateg" onclick="food('pork', event)">Pork</button>
+        <button class="menucateg" onclick="food('seafood', event)">Seafood</button>
+        <button class="menucateg" onclick="food('vegetables', event)">Vegetables</button>
+        <button class="menucateg" onclick="food('noodles', event)">Noodles</button>
+        <button class="menucateg" onclick="food('soup', event)">Soup</button>
+        <button class="menucateg" onclick="food('rice', event)">Rice</button>
+        <button class="menucateg" onclick="food('merienda', event)">Sandwiches & Merienda</button>
+        <button class="menucateg" onclick="food('dessert', event)">Desserts</button>
+        <button class="menucateg" onclick="food('beverages', event)">Beverages & Fruit Shakes</button>
+    </div>
+   <div class="menulist">
+<!-- All-Time Favorites Category -->
+    <div class="menulista" data-category="faves">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pork Barbecue</h3>
+                <span class="fudprice">₱300</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="faves">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Boneless Chicken Barbecue</h3>
+                <span class="fudprice">₱295</span>
+            </div>
+            <p class="fuddesc">Tender boneless chicken marinated in Aristocrat’s signature barbecue sauce and grilled smoky perfection.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="faves">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pork Spareribs</h3>
+                <span class="fudprice">₱315</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="faves">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">3-PC Chicken Barbecue</h3>
+                <span class="fudprice">₱345</span>
+            </div>
+            <p class="fuddesc">Three juicy chicken barbecue pieces marinated in a sweet savory blend and char-grilled for extra flavor.</p>
+        </div>
+    </div>
+<!-- Chicken Category -->
+    <div class="menulista" data-category="chicken">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Chicken Honey</h3>
+                <span class="fudprice">₱648</span>
+            </div>
+            <p class="fuddesc">Whole chicken glazed with rich honey sauce, roasted to perfection with a sweet and savory flavor.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="chicken">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">South China Chicken</h3>
+                <span class="fudprice">₱758</span>
+            </div>
+            <p class="fuddesc">Whole crispy chicken tossed in savory Chinese-inspired sauce with garlic and aromatic spices.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="chicken">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Chicken Adobo</h3>
+                <span class="fudprice">₱388</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Beef Category -->
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Kare-Kare</h3>
+                <span class="fudprice">₱925</span>
+            </div>
+            <p class="fuddesc">Rich and creamy peanut sauce with tender beef in a savory broth.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Bulalo</h3>
+                <span class="fudprice">₱795</span>
+            </div>
+            <p class="fuddesc">Beef shanks in a savory broth with warm and rich flavor, and a bone marrow that melts in your mouth.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Mechado</h3>
+                <span class="fudprice">₱640</span>
+            </div>
+            <p class="fuddesc">Tender beef cooked in a rich, savory sauce with a sweet and tangy flavor.</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Kalderetang Baka</h3>
+                <span class="fudprice">₱615</span>
+            </div>
+            <p class="fuddesc">Hearty beef stew, with a thick and savory-sweet tomato sauce, creamy liver spread, subtle kick of chili and, vegetables. </p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Bistek Tagalog</h3>
+                <span class="fudprice">₱450</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beef">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Tapang Karne</h3>
+                <span class="fudprice">₱375</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Pork Category -->
+     <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Crispy Pata</h3>
+                <span class="fudprice">₱975</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Lumpiang Shanghai</h3>
+                <span class="fudprice">₱415</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Lola Asiang's Chicken & Pork Adobo</h3>
+                <span class="fudprice">₱400</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Native Longganisa</h3>
+                <span class="fudprice">₱335</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sinigang na Baboy</h3>
+                <span class="fudprice">₱575</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sizzling Sisig</h3>
+                <span class="fudprice">₱325</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Lechon Kawali</h3>
+                <span class="fudprice">₱425</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="pork">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pork Adobo</h3>
+                <span class="fudprice">₱450</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Seafood Category -->
+     <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sizzling Gambas</h3>
+                <span class="fudprice">₱400</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Crab Food Yeung</h3>
+                <span class="fudprice">₱315</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sinigang na Tiyan ng Bangus</h3>
+                <span class="fudprice">₱485</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sweet & Sour Fish Fillet</h3>
+                <span class="fudprice">₱340</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Paksiw na Tiyan ng Bangus</h3>
+                <span class="fudprice">₱410</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Daing na Bangus</h3>
+                <span class="fudprice">₱400</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sizzling Pusit</h3>
+                <span class="fudprice">₱428</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Calamares</h3>
+                <span class="fudprice">₱420</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Camaron Rebosado</h3>
+                <span class="fudprice">₱398</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sinigang na Hipon</h3>
+                <span class="fudprice">₱480</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="seafood">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sweet & Sour Lapu-Lapu</h3>
+                <span class="fudprice">₱658</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Vegetables Category -->
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Mixed Chopsuey</h3>
+                <span class="fudprice">₱420</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Shrimp Chopsuey</h3>
+                <span class="fudprice">₱405</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pinakbet na Baboy</h3>
+                <span class="fudprice">₱330</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pinakbet na Hipon</h3>
+                <span class="fudprice">₱310</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Amapalya Con Carne</h3>
+                <span class="fudprice">₱298</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>    
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Ginataang Laing</h3>
+                <span class="fudprice">₱225</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>    
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sizzling Tofu</h3>
+                <span class="fudprice">₱280</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="vegetables">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Crispy Eggplant</h3>
+                <span class="fudprice">₱160</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+<!-- Noodles Category -->
+ <div class="menulista" data-category="noodles">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Aristocrat Pancit Canton</h3>
+                <span class="fudprice">₱535</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="noodles">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pancit Bihon</h3>
+                <span class="fudprice">₱495</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="noodles">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sotanghon Guisado</h3>
+                <span class="fudprice">₱358</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>   
+    <div class="menulista" data-category="noodles">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pancit Luglog</h3>
+                <span class="fudprice">₱310</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Soup Category -->
+    <div class="menulista" data-category="soup">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Hototai Soup</h3>
+                <span class="fudprice">₱425</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="soup">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Sotanghon Soup</h3>
+                <span class="fudprice">₱135</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="soup">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Crab & Corn Soup</h3>
+                <span class="fudprice">₱98</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="soup">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Ensaladang Manggang Hilaw</h3>
+                <span class="fudprice">₱158</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Rice Category -->
+    <div class="menulista" data-category="rice">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Shanghai Rice</h3>
+                <span class="fudprice">₱280</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+     <div class="menulista" data-category="rice">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Bowl of Plain Rice</h3>
+                <span class="fudprice">₱235</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+     <div class="menulista" data-category="rice">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Plain Rice</h3>
+                <span class="fudprice">₱50</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+     <div class="menulista" data-category="rice">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Garlic Rice</h3>
+                <span class="fudprice">₱60</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+     <div class="menulista" data-category="rice">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Aristocrat Java Rice</h3>
+                <span class="fudprice">₱70</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Sandwiches & Merienda Category -->
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Adobo Flying Saucer</h3>
+                <span class="fudprice">₱190</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Arroz Con Caldo</h3>
+                <span class="fudprice">₱165</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pospas de Gallina</h3>
+                <span class="fudprice">₱170</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Fresh Lumpiang Ubod</h3>
+                <span class="fudprice">₱175</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Fried Lumpiang Ubod</h3>
+                <span class="fudprice">₱188</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Clubhouse Sandwich</h3>
+                <span class="fudprice">₱390</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Chicken Sandwich</h3>
+                <span class="fudprice">₱190</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Tokwa't Baboy</h3>
+                <span class="fudprice">₱225</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Beef Dinuguan</h3>
+                <span class="fudprice">₱215</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="merienda">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Puto</h3>
+                <span class="fudprice">₱85</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Dessert Category -->
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Halo-Halo</h3>
+                <span class="fudprice">₱180</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Halo-Halo Blanca</h3>
+                <span class="fudprice">₱160</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Leche Flan</h3>
+                <span class="fudprice">₱90</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Ice Cream</h3>
+                <span class="fudprice">₱85</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Macapuno Pandan</h3>
+                <span class="fudprice">₱105</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="dessert">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Banana Split</h3>
+                <span class="fudprice">₱320</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+<!-- Beverages Category -->
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Brewed Coffee</h3>
+                <span class="fudprice">₱95</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Hot Tea</h3>
+                <span class="fudprice">₱75</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Fresh Calamansi Juice</h3>
+                <span class="fudprice">₱88</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Pineapple Shake</h3>
+                <span class="fudprice">₱180</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Fresh Mango Shake</h3>
+                <span class="fudprice">₱180</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Bottled Water</h3>
+                <span class="fudprice">₱75</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Softdrinks in a Can</h3>
+                <span class="fudprice">₱100</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">San Mig Light in a Can</h3>
+                <span class="fudprice">₱105</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">San Mig Pale Pilsen in a Can</h3>
+                <span class="fudprice">₱105</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Iced Tea Pitcher</h3>
+                <span class="fudprice">₱365</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">House Blend Iced Tea</h3>
+                <span class="fudprice">₱98</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Gulaman at Sago</h3>
+                <span class="fudprice">₱98</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Native Hot Chocolate</h3>
+                <span class="fudprice">₱105</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Mango Banana Shake</h3>
+                <span class="fudprice">₱185</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+    <div class="menulista" data-category="beverages">
+        <div>
+            <div class="fud">
+                <h3 class="fudname">Green Mango Shake</h3>
+                <span class="fudprice">₱180</span>
+            </div>
+            <p class="fuddesc">IDK HELP</p>
+        </div>
+    </div>
+</div>
+<!---------------------------ABOUT--------------------------->
+
+
+<!---------------------------REVIEW--------------------------->
+
+
+<!---------------------------CONTACTS--------------------------->
+<div class section id="contact">
+    <h1>Contact Us</h1>
+     <p class="csub"> WE'D LOVE TO HEAR FROM YOU</p>
+     <div class="cbox">    
+    <div class="ccard">
+        <h3>Reservations</h3>
+        <p>For inquiries and reservations, please contact us at: (02) 8895 0725</p>
+    </div>
+    <div class="ccard">
+        <h3>General Inquiries</h3>
+        <p>General Inquiries: hr@aristocratphmail.com    Recruitments: hrd@admin.aristocratphmail.com</p>
+    </div>
+    <div class="ccard">
+        <h3>Catering Services</h3>
+        <p>Catering: aristocrat_catering@yahoo.com</p>
+    </div>
+    </div>
+     <div class="social">
+        <a href="https://www.instagram.com/aristocrat_ph/?hl=en" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/25/25305.png" alt="fb" class="socialimg">
+        </a>
+        <a href="https://www.facebook.com/TheOriginalAristocrat/" target="_blank">
+            <img src="https://cdn-icons-png.flaticon.com/512/87/87390.png" alt="ig" class="socialimg">
+        </a>
+    </div>
+</div>
+</body>
+</html>
